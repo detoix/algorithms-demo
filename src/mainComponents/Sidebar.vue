@@ -3,7 +3,7 @@
     <div
       is="menu-item"
       v-for="menuItem in menuItems"
-      v-bind:key="menuItem.id"
+      v-bind:key="menuItem"
       v-bind:menuItem="menuItem" />
   </div>
 </template>
@@ -20,12 +20,16 @@
       return {
         menuItems: [
           {
-            id: 0,
-            name: "Item"
+            path: "",
+            name: "Home"
           },
           {
-            id: 1,
-            name: "Item"
+            path: "sort/bubble",
+            name: "Bubble Sort"
+          },
+          {
+            path: "sort/insertion",
+            name: "Insertion Sort"
           }
         ]
       }

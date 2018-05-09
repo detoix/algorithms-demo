@@ -24,7 +24,7 @@
 
 <script>
   export default {
-    name: 'BubbleSort',
+    name: 'InsertionSort',
     data () {
       return {
         output: null,
@@ -32,28 +32,16 @@
       }
     },
     methods: {
-      validateInput (input) {
-        return input.match(/^(([0-9], )+)?[0-9]$/)
-      },
       sort () {
         if (!this.validateInput(this.input)) {
           this.output = "Invalid input!"
         }
         else {
-          this.output = this.bubbleSort(this.input.split(", "))
+          this.output = [1, 2]
         }
       },
-      bubbleSort (data) {
-        for (let i = 0; i < data.length; i++) {
-          for (let j = data.length - 1; j > 0; j--) {
-            if (data[j] < data[j - 1]) {
-              let tmp = data[j];
-              data[j] = data[j - 1];
-              data[j - 1] = tmp;
-            }
-          }
-        }        
-        return data
+      validateInput (input) {
+        return input.match(/^(([0-9], )+)?[0-9]$/)
       }
     },
     computed: {

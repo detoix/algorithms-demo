@@ -1,7 +1,7 @@
 <template>
   <div class="tile is-parent">
     <article class="tile is-child notification" v-bind:class="[active ? 'is-success' : 'is-info', '']">
-      <router-link :to="{ path: '/' + menuItem.id }">{{menuItem.name}}</router-link>
+      <router-link :to="{ path: '/' + menuItem.path }">{{menuItem.name}}</router-link>
     </article>
   </div>
 </template>
