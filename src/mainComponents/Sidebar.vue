@@ -3,7 +3,7 @@
     <div
       is="menu-item"
       v-for="menuItem in menuItems"
-      v-bind:key="menuItem"
+      v-bind:key="menuItem.name"
       v-bind:menuItem="menuItem" />
   </div>
 </template>

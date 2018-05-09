@@ -17,18 +17,25 @@
           </div>
           <p v-if="outputVisible">{{output}}</p>
         </div>
+        <chart :chartData="chartData" />
       </article>
     </div>
   </div>
 </template>
 
 <script>
+  import Chart from './Chart.vue'
+
   export default {
     name: 'BubbleSort',
+    components: {
+      Chart
+    },
     data () {
       return {
         output: null,
-        input: ""
+        input: "",
+        chartData: null,
       }
     },
     methods: {
@@ -41,6 +48,7 @@
         }
         else {
           this.output = this.bubbleSort(this.input.split(", "))
+          this.fillData()
         }
       },
       bubbleSort (data) {
@@ -54,6 +62,25 @@
           }
         }        
         return data
+      },
+      fillData () {
+        this.chartData = {
+          labels: [this.getRandomInt(), this.getRandomInt()],
+          datasets: [
+            {
+              label: 'Data One',
+              backgroundColor: '#f87979',
+              data: [this.getRandomInt(), this.getRandomInt()]
+            }, {
+              label: 'Data One',
+              backgroundColor: '#a4f442',
+              data: [this.getRandomInt(), this.getRandomInt()]
+            }
+          ]
+        }
+      },
+      getRandomInt () {
+        return Math.floor(Math.random() * (50 - 5 + 1)) + 5
       }
     },
     computed: {
