@@ -5,15 +5,17 @@
         <h1 class="title is-spaced">Title</h1>
         <h2 class="subtitle is-spaced">Description</h2>
         <div class="field is-grouped">
-          <p class="control is-expanded">
+          <div class="control is-expanded">
             <input 
-              class="input" 
+              class="input"
+              :class="{ 'is-danger': !validInput }" 
               type="text" 
               v-model="input" 
-              placeholder="5, 2, 4, 6, 1, 3">
-          </p>
+              placeholder="5, 2, 4, 6, 1, 3"
+              @keyup.enter="sort">
+          </div>
           <p class="control">
-            <a class="button is-info" @click="sort()">
+            <a class="button is-info" @click="sort">
               Sort
             </a>
           </p>
@@ -53,17 +55,13 @@
       }
     },
     methods: {
-      validateInput (input) {
-        return input.match(this.inputFormat)
-      },
       parseInput() {
         return this.input.split(", ").map(e => parseInt(e))
       },
       sort () {
-        if (!this.validateInput(this.input)) {
+        if (!this.validInput) {
           this.chartData = undefined
           this.sorted = []
-          alert(this.invalidMessage)
         }
         else {
           this.bubbleSort()
@@ -120,8 +118,8 @@
       sortedVisible () {
         return this.sorted.length > 0 && this.chartData != undefined
       },
-      invalidMessage () {
-        return 'Invalid input!'
+      validInput () {
+        return this.input.match(this.inputFormat)
       },
       numberOfSteps () {
         return this.sorted.length - 1
