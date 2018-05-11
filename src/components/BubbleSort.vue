@@ -84,6 +84,7 @@
             }
           }
         }
+        this.step = 0
         this.sorted = result
       },
       updateChart () {
