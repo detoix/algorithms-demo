@@ -1,5 +1,5 @@
 <template>
-  <div class="column">
+  <div class="column section">
     <div class="tile is-parent">
       <article class="tile is-child notification">
         <h1 class="title is-spaced">Title</h1>
@@ -40,12 +40,14 @@
 
 <script>
   import Chart from './Chart.vue'
+  import { default as bubbleSort } from './Mixins/bubbleSort.js'
+  import { default as insertionSort } from './Mixins/insertionSort.js'
 
   export default {
-    name: 'BubbleSort',
     components: {
-      Chart
+      Chart 
     },
+    mixins: [bubbleSort, insertionSort],
     data () {
       return {
         input: "",
@@ -64,26 +66,9 @@
           this.sorted = []
         }
         else {
-          this.bubbleSort()
+          this[this.$route.name]()
           this.updateChart()
         }
-      },
-      bubbleSort () {
-        let data = this.parseInput()
-        let result = []
-        result.push(data.slice())
-        for (let i = 0; i < data.length; i++) {
-          for (let j = data.length - 1; j > 0; j--) {
-            if (data[j] < data[j - 1]) {
-              let swap = data[j];
-              data[j] = data[j - 1];
-              data[j - 1] = swap;  
-              result.push(data.slice())
-            }
-          }
-        }
-        this.step = 0
-        this.sorted = result
       },
       updateChart () {
         let min = Math.min.apply(Math, this.sorted[this.step])

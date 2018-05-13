@@ -1,5 +1,5 @@
 <template>
-  <div class="column is-narrow">
+  <div class="column section is-narrow">
     <div
       is="menu-item"
       v-for="menuItem in menuItems"
@@ -12,7 +12,6 @@
   import MenuItem from './MenuItem.vue'
 
   export default {
-    name: 'sidebar',
     components: {
       MenuItem
     },

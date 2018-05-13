@@ -8,7 +8,6 @@
 
 <script>
   export default {
-    name: 'menuItem',
     props: ['menuItem', 'active'],
   }
 </script>

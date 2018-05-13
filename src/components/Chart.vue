@@ -2,7 +2,6 @@
   import { Bar, mixins } from 'vue-chartjs'
  
   export default {
-    name: 'Chart',
     extends: Bar,
     mixins: [mixins.reactiveProp],
     props: ['chartData'],

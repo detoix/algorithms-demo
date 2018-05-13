@@ -19,9 +19,7 @@
 </template>
 
 <script>
-  export default {
-    name: 'top'
-  }
+  export default { }
 </script>
 
 <style></style>
