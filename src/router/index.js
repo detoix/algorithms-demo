@@ -23,6 +23,11 @@ export default new Router({
       component: Sort
     },
     {
+      path: '/sort/merge',
+      name: 'mergeSort',
+      component: Sort
+    },
+    {
     path: '*',
     redirect: '/'
     }

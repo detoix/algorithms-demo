@@ -29,6 +29,10 @@
           {
             path: "sort/insertion",
             name: "Insertion Sort"
+          },
+          {
+            path: "sort/merge",
+            name: "Merge Sort"
           }
         ]
       }

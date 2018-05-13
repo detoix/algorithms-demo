@@ -2,8 +2,7 @@ export default {
     methods: {
       insertionSort () {
         let data = this.parseInput()
-        let result = []
-        result.push(data.slice())
+        let results = [data.slice()]
         for (let j = 1; j < data.length; j++) {
           let key = data[j]
           let i = j - 1
@@ -12,10 +11,9 @@ export default {
             i -= 1
           }
           data[i + 1] = key
-          result.push(data.slice())
+          results.push(data.slice())
         }
-        this.step = 0
-        this.sorted = result
+        this.sorted = results
       }
     }
   }

@@ -42,12 +42,13 @@
   import Chart from './Chart.vue'
   import { default as bubbleSort } from './Mixins/bubbleSort.js'
   import { default as insertionSort } from './Mixins/insertionSort.js'
+  import { default as mergeSort } from './Mixins/mergeSort.js'
 
   export default {
     components: {
       Chart 
     },
-    mixins: [bubbleSort, insertionSort],
+    mixins: [bubbleSort, insertionSort, mergeSort],
     data () {
       return {
         input: "",
@@ -66,6 +67,7 @@
           this.sorted = []
         }
         else {
+          this.step = 0
           this[this.$route.name]()
           this.updateChart()
         }
