@@ -43,12 +43,13 @@
   import { default as bubbleSort } from './Mixins/bubbleSort.js'
   import { default as insertionSort } from './Mixins/insertionSort.js'
   import { default as mergeSort } from './Mixins/mergeSort.js'
+  import { default as selectionSort } from './Mixins/selectionSort.js'
 
   export default {
     components: {
       Chart 
     },
-    mixins: [bubbleSort, insertionSort, mergeSort],
+    mixins: [bubbleSort, insertionSort, mergeSort, selectionSort],
     data () {
       return {
         input: "",

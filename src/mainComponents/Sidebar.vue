@@ -33,7 +33,11 @@
           {
             path: "sort/merge",
             name: "Merge Sort"
-          }
+          },
+          {
+            path: "sort/selection",
+            name: "Selection Sort"
+          },
         ]
       }
     }

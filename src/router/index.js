@@ -28,6 +28,11 @@ export default new Router({
       component: Sort
     },
     {
+      path: '/sort/selection',
+      name: 'selectionSort',
+      component: Sort
+    },
+    {
     path: '*',
     redirect: '/'
     }
