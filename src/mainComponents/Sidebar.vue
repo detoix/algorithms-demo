@@ -38,6 +38,14 @@
             path: "sort/selection",
             name: "Selection Sort"
           },
+          {
+            path: "sort/heap",
+            name: "Heap Sort"
+          },
+          {
+            path: "sort/quick",
+            name: "Quick Sort"
+          },
         ]
       }
     }

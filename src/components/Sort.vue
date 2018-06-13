@@ -44,12 +44,26 @@
   import { default as insertionSort } from './Mixins/insertionSort.js'
   import { default as mergeSort } from './Mixins/mergeSort.js'
   import { default as selectionSort } from './Mixins/selectionSort.js'
+  import { default as heapSort } from './Mixins/heapSort.js'
+  import { default as quickSort } from './Mixins/quickSort.js'
+
+  import { default as convexHullScan } from './Mixins/convexHullScan.js'
 
   export default {
     components: {
       Chart 
     },
-    mixins: [bubbleSort, insertionSort, mergeSort, selectionSort],
+    mixins: [
+      bubbleSort,
+      insertionSort, 
+      mergeSort, 
+      selectionSort, 
+      heapSort,
+      quickSort,
+
+
+      convexHullScan
+    ],
     data () {
       return {
         input: "",
@@ -63,6 +77,8 @@
         return this.input.split(", ").map(e => parseInt(e))
       },
       sort () {
+        this.convexHullScan()
+
         if (!this.validInput) {
           this.chartData = undefined
           this.sorted = []

@@ -33,6 +33,16 @@ export default new Router({
       component: Sort
     },
     {
+      path: '/sort/heap',
+      name: 'heapSort',
+      component: Sort
+    },
+    {
+      path: '/sort/quick',
+      name: 'quickSort',
+      component: Sort
+    },
+    {
     path: '*',
     redirect: '/'
     }
